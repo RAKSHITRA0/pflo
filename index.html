@@ -1,202 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Rakshit Rao | Developer • Designer • Visionary Builder</title>
-    <style>
-        /* Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rakshit Rao — Portfolio</title>
+  <style>
+    :root {
+      --bg: #050505;
+      --primary: #00e0ff;
+      --accent: #ff2dfd;
+      --text: #f5f5f5;
+      --glass: rgba(255, 255, 255, 0.05);
+    }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            background-color: #0d0d0d;
-            color: #eee;
-            padding: 0 20px;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(to right, #0f0f0f, #1a1a1a);
-            text-align: center;
-            padding: 80px 20px;
-            color: white;
-        }
+    html, body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', sans-serif;
+      overflow-x: hidden;
+    }
 
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-        }
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-image: url();
+      z-index: -10;
+      opacity: 0.25;
+    }
 
-        .subtitle {
-            font-size: 1.2rem;
-            color: #aaa;
-            margin-bottom: 20px;
-        }
+    header {
+      background: url('https://files.123freevectors.com/wp-content/original/141602-black-pink-and-blue-geometric-shapes-background-design.jpg') center/cover no-repeat;
+      padding: 140px 20px;
+      text-align: center;
+      position: relative;
+    }
 
-        .nav-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            list-style: none;
-        }
+    header::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2));
+      z-index: 0;
+    }
 
-        .nav-links a {
-            color: #00bfff;
-            text-decoration: none;
-            font-weight: bold;
-        }
+    header h1 {
+      font-size: 4rem;
+      position: relative;
+      z-index: 1;
+      background: linear-gradient(to right, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      color: transparent;
+    }
 
-        .content-section {
-            max-width: 900px;
-            margin: 60px auto;
-            padding: 30px;
-            background: #1a1a1a;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        }
+    header p.sub {
+      margin-top: 15px;
+      font-size: 1.3rem;
+      color: #ccc;
+      position: relative;
+      z-index: 1;
+    }
 
-        .service-card, .project-card {
-            margin-bottom: 30px;
-        }
+    nav {
+      margin-top: 30px;
+      position: relative;
+      z-index: 1;
+    }
 
-        .service-card h3,
-        .project-card h3 {
-            color: #00bfff;
-            margin-bottom: 10px;
-        }
+    nav a {
+      margin: 0 15px;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s ease;
+    }
 
-        .project-card a {
-            display: inline-block;
-            margin-top: 10px;
-            color: #00bfff;
-            text-decoration: none;
-        }
+    nav a:hover {
+      color: var(--accent);
+      text-shadow: 0 0 10px var(--accent);
+    }
 
-        .tech-list li {
-            margin-bottom: 10px;
-        }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 60px 20px;
+    }
 
-        .social-links a {
-            color: #00bfff;
-            text-decoration: none;
-            margin: 0 10px;
-        }
+    section {
+      margin-bottom: 80px;
+    }
 
-        footer {
-            text-align: center;
-            padding: 40px 0;
-            background: #0d0d0d;
-            color: #777;
-        }
-    </style>
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: var(--primary);
+    }
+
+    .card {
+      background: var(--glass);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 30px;
+      margin-bottom: 30px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      color: var(--accent);
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--accent);
+    }
+
+    .glow-line {
+      height: 2px;
+      background: linear-gradient(to right, var(--primary), var(--accent));
+      animation: move 3s linear infinite;
+      margin: 40px 0;
+    }
+
+    @keyframes move {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+
+    footer {
+      text-align: center;
+      color: #666;
+      font-size: 0.9rem;
+      padding: 50px 20px;
+    }
+  </style>
 </head>
 <body>
 
-    <header class="hero">
-        <div class="hero-content">
-            <h1>Rakshit Rao</h1>
-            <p class="subtitle">Developer • Designer • Visionary Builder</p>
-            <nav class="nav-links">
-                <a href="#about">About</a>
-                <a href="#what-i-do">What I Do</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
-            </nav>
-        </div>
-    </header>
+  <header >
+    <h1>Rakshit Rao</h1>
+    <p class="sub">Developer • Designer • Visionary Builder</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-    <section id="about" class="content-section">
-        <h2>About Me</h2>
+  <div class="container">
+    <div class="glow-line"></div>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <div class="card">
         <p>I'm Rakshit, a multidisciplinary creator with a passion for building impactful digital experiences, smart systems, and future-first businesses.</p>
         <p>Whether it's developing intelligent tools, coding immersive games, or designing high-tech UI, I thrive at the intersection of creativity, logic, and innovation.</p>
         <p>I don’t just build for today—I design with tomorrow in mind.</p>
+      </div>
     </section>
 
-    <section id="what-i-do" class="content-section">
-        <h2>What I Do</h2>
+    <section id="projects">
+      <h2>Projects</h2>
 
-        <div class="service-card">
-            <h3>Web & App Development</h3>
-            <p>Crafting responsive, interactive, and offline-capable web applications with JavaScript, HTML, CSS, and custom backend integrations.</p>
-        </div>
+      <div class="card">
+        <h3>Ascendant</h3>
+        <p>A PC open-world superhero game with deep lore and insane power dynamics. Fly, fight, and rise. Coming soon.</p>
+      </div>
 
-        <div class="service-card">
-            <h3>UI/UX & Futuristic Design</h3>
-            <p>Designing sleek, intuitive, and high-tech user interfaces with 3D/2D visual styling, often inspired by sci-fi and minimalist aesthetics.</p>
-        </div>
+      <div class="card">
+        <h3>AI Everywhere</h3>
+        <p>My modular, privacy-respecting AI assistant — Jarvis if it was born in 2025 and ran offline. Coming soon.</p>
+      </div>
 
-        <div class="service-card">
-            <h3>Game Development</h3>
-            <p>Currently leading Ascendant, a story-driven open-world superhero game powered by Godot 4—complete with custom mechanics, lore, and original characters.</p>
-        </div>
+      <div class="card">
+        <h3>Brainrot Supply</h3>
+        <p>Meme-fueled, irony-poisoned fashion that's as chaotic as your group chat. Coming soon.</p>
+      </div>
+    </section>
+    
+    <section id="what-i-do">
+  <h2>What I Do</h2>
 
-        <div class="service-card">
-            <h3>AI & Automation Projects</h3>
-            <p>Architecting "AI Everywhere" (aka NOVA), a modular, semi-offline personal AI assistant inspired by Jarvis—focusing on privacy, local-first logic, and seamless device control.</p>
-        </div>
+  <div class="card">
+    <h3>Web & App Development</h3>
+    <p>Crafting responsive, interactive, and offline-capable web applications with JavaScript, HTML, CSS, and custom backend integrations.</p>
+  </div>
 
-        <div class="service-card">
-            <h3>Startup Prototyping & Ventures</h3>
-            <p>Founder of early-stage initiatives like Watchdog Capital (a hedge fund model) and TetraMESH, focused on next-gen networking and defense-grade tech infrastructure.</p>
-        </div>
+  <div class="card">
+    <h3>UI/UX & Futuristic Design</h3>
+    <p>Designing sleek, intuitive, and high-tech user interfaces with 3D/2D visual styling, often inspired by sci-fi and minimalist aesthetics.</p>
+  </div>
+
+  <div class="card">
+    <h3>Game Development</h3>
+    <p>Currently leading <strong>Ascendant</strong>, a story-driven open-world superhero game powered by Godot 4—complete with custom mechanics, lore, and original characters.</p>
+  </div>
+
+  <div class="card">
+    <h3>AI & Automation Projects</h3>
+    <p>Architecting <strong>"AI Everywhere"</strong> (aka NOVA), a modular, semi-offline personal AI assistant inspired by Jarvis—focusing on privacy, local-first logic, and seamless device control.</p>
+  </div>
+
+  <div class="card">
+    <h3>Startup Prototyping & Ventures</h3>
+    <p>Founder of early-stage initiatives like <strong>Watchdog Capital</strong> (a hedge fund model) and <strong>TetraMESH</strong>, focused on next-gen networking and defense-grade tech infrastructure.</p>
+  </div>
+</section>
+
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="card">
+        <p>Email: <a href="mailto:rakshit.public.facing@gmail.com">rakshit.public.facing@gmail.com</a></p>
+        <p>
+          <a href="https://github.com/RAKSHITRA0" target="_blank">GitHub</a> |
+          <a href="https://instagram.com/createdbyrakshit" target="_blank">Instagram</a>
+        </p>
+      </div>
     </section>
 
-    <section id="projects" class="content-section">
-        <h2>Projects</h2>
+    <div class="glow-line"></div>
+  </div>
 
-        <div class="project-card">
-            <h3>Ascendant (PC Game)</h3>
-            <p>A story-driven open-world superhero game built in Godot 4 with full storyline, twists, powers, and custom-built systems.</p>
-            <a href="#" target="_blank">View Project</a>
-        </div>
-
-        <div class="project-card">
-            <h3>AI Everywhere (NOVA)</h3>
-            <p>A futuristic digital assistant prototype combining real-time response, tool integration, and privacy-focused architecture.</p>
-            <a href="#" target="_blank">View Project</a>
-        </div>
-
-        <div class="project-card">
-            <h3>Brainrot Supply</h3>
-            <p>A meme fashion brand turning absurdist humor into wearable drops (T-shirts, hoodies, and more).</p>
-            <a href="#" target="_blank">View Project</a>
-        </div>
-
-        <div class="project-card">
-            <h3>Growth Spurt Web App</h3>
-            <p>A standby-mode-inspired tracker with widget-like UI, local storage, and growth visualization.</p>
-            <a href="#" target="_blank">View Project</a>
-        </div>
-    </section>
-
-    <section id="tech-stack" class="content-section">
-        <h2>Tech Stack</h2>
-        <ul class="tech-list">
-            <li><strong>Frontend:</strong> HTML, CSS, Tailwind, JavaScript, React</li>
-            <li><strong>Game Dev:</strong> Godot 4, GDScript, Blueprint, Unreal Engine</li>
-            <li><strong>Tools:</strong> GitHub, Figma, Canva, Three.js (experiments), LocalStorage</li>
-            <li><strong>Design:</strong> 3D/2D UI Concepts, Logo & Brand Identity, Minimal & Neo-Futurist themes</li>
-        </ul>
-    </section>
-
-    <section id="contact" class="content-section">
-        <h2>Contact Me</h2>
-        <p>You can reach me at: <a href="mailto:rakshit.public.facing@gmail.com">rakshit.public.facing@gmail.com</a></p>
-        <div class="social-links">
-            <a href="https://github.com/RAKSHITRA0"  target="_blank">GitHub</a> |
-            <a href="https://instagram.com/createdbyrakshit"  target="_blank">Instagram</a>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 Rakshit Rao. All rights reserved.</p>
-    </footer>
+  <footer>
+    &copy; 2025 Rakshit Rao. Made with pixels, madness & raw HTML ⚡
+  </footer>
 
 </body>
 </html>
