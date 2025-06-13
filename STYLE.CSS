@@ -1,0 +1,89 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #0d0d0d;
+    color: #eee;
+    padding: 0 20px;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(to right, #0f0f0f, #1a1a1a);
+    text-align: center;
+    padding: 80px 20px;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #aaa;
+    margin-bottom: 20px;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: #00bfff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.content-section {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 30px;
+    background: #1a1a1a;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.service-card, .project-card {
+    margin-bottom: 30px;
+}
+
+.service-card h3,
+.project-card h3 {
+    color: #00bfff;
+    margin-bottom: 10px;
+}
+
+.project-card a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #00bfff;
+    text-decoration: none;
+}
+
+.tech-list li {
+    margin-bottom: 10px;
+}
+
+.social-links a {
+    color: #00bfff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 40px 0;
+    background: #0d0d0d;
+    color: #777;
+}
