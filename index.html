@@ -1,225 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Rakshit Rao — Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rakshit Rao — Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #0b0c10;
+            color: #f4f4f4;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            position: relative;
+        }
 
-  <!-- Bootstrap CSS + Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+        h1, h2 {
+            font-weight: 700;
+        }
 
-  <style>
-    body {
-      background-color: #0b0c10;
-      color: #f4f4f4;
-      font-family: 'Inter', sans-serif;
-      overflow-x: hidden;
-      position: relative;
-    }
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, #ff6c00, transparent 70%);
+            filter: blur(80px);
+            animation: float 8s ease-in-out infinite alternate;
+            opacity: 0.12;
+            z-index: -1;
+        }
 
-    h1, h2 {
-      font-weight: 700;
-    }
+        .orb1 {
+            width: 220px;
+            height: 220px;
+            top: -100px;
+            left: -80px;
+        }
 
-    .orb {
-      position: absolute;
-      border-radius: 50%;
-      background: radial-gradient(circle, #ff6c00, transparent 70%);
-      filter: blur(80px);
-      animation: float 8s ease-in-out infinite alternate;
-      opacity: 0.12;
-      z-index: -1;
-    }
+        .orb2 {
+            width: 180px;
+            height: 180px;
+            top: 300px;
+            right: -100px;
+        }
 
-    .orb1 { width: 220px; height: 220px; top: -100px; left: -80px; }
-    .orb2 { width: 180px; height: 180px; top: 300px; right: -100px; }
-    .orb3 { width: 200px; height: 200px; bottom: 100px; left: 50px; }
-    .orb4 { width: 260px; height: 260px; bottom: -120px; right: 20px; }
+        .orb3 {
+            width: 200px;
+            height: 200px;
+            bottom: 100px;
+            left: 50px;
+        }
 
-    @keyframes float {
-      0% { transform: translateY(0); }
-      100% { transform: translateY(30px); }
-    }
+        .orb4 {
+            width: 260px;
+            height: 260px;
+            bottom: -120px;
+            right: 20px;
+        }
 
-    .section-title {
-      color: #ffaa33;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      font-weight: 600;
-      margin-bottom: 20px;
-    }
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(30px);
+            }
+        }
 
-    .project-card {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 12px;
-      padding: 24px;
-      transition: all 0.3s ease;
-      backdrop-filter: blur(8px);
-      box-shadow: 0 6px 24px rgba(0,0,0,0.3);
-    }
+        .section-title {
+            color: #ffaa33;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
 
-    .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 32px rgba(255, 108, 0, 0.2);
-    }
+        .project-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 24px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
+        }
 
-    .bi {
-      font-size: 1.5rem;
-      color: #ccc;
-      transition: 0.2s ease;
-    }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 32px rgba(255, 108, 0, 0.2);
+        }
 
-    .bi:hover {
-      color: #ffaa33;
-    }
+        .bi {
+            font-size: 1.5rem;
+            color: #ccc;
+            transition: 0.2s ease;
+        }
 
-    footer {
-      text-align: center;
-      font-size: 0.9rem;
-      margin-top: 60px;
-      color: #777;
-    }
-  </style>
+        .bi:hover {
+            color: #ffaa33;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.9rem;
+            margin-top: 60px;
+            color: #777;
+        }
+    </style>
 </head>
 <body>
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+    <div class="orb orb4"></div>
 
-  <!-- Orbs -->
-  <div class="orb orb1"></div>
-  <div class="orb orb2"></div>
-  <div class="orb orb3"></div>
-  <div class="orb orb4"></div>
-
-  <div class="container text-center pt-5">
-    <p class="text-uppercase text-warning small">Hello, I'm</p>
-    <h1 class="display-4 fw-bold">Rakshit Rao</h1>
-  </div>
-
-  <iframe src="https://rakshitra0.github.io/ECHO/"
-        title="Experience ECHO"
-        width="100%"
-        height="500"
-        style="border: 2px solid #ccc; border-radius: 8px;">
-</iframe>
-  <!-- Projects -->
-  <!-- What I Do Section -->
-<section class="container py-5">
-  <h2 class="section-title">What I Do</h2>
-  <div class="row g-4">
-
-    <div class="col-md-6">
-      <div class="project-card">
-        <h5 class="text-warning"><i class="bi bi-code-slash me-2"></i>Web & App Development</h5>
-        <p>Crafting responsive, interactive, and offline-capable web applications with JavaScript, HTML, CSS, and custom backend integrations.</p>
-      </div>
+    <div class="container text-center pt-5">
+        <p class="text-uppercase text-warning small">Hello, I'm</p>
+        <h1 class="display-4 fw-bold">Rakshit Rao</h1>
     </div>
 
-    <div class="col-md-6">
-      <div class="project-card">
-        <h5 class="text-warning"><i class="bi bi-palette-fill me-2"></i>UI/UX & Futuristic Design</h5>
-        <p>Designing sleek, intuitive, and high-tech user interfaces with 3D/2D visual styling, often inspired by sci-fi and minimalist aesthetics.</p>
-      </div>
+    <div class="container text-center py-5">
+        <h2 class="section-title">Experience E.C.H.O.</h2>
     </div>
 
-    <div class="col-md-6">
-      <div class="project-card">
-        <h5 class="text-warning"><i class="bi bi-controller me-2"></i>Game Development</h5>
-        <p>Currently leading <strong>Ascendant</strong>, a story-driven open-world superhero game powered by Godot 4—complete with custom mechanics, lore, and original characters.</p>
-      </div>
-    </div>
+    <iframe src="https://rakshitra0.github.io/ECHO/" title="Experience ECHO" width="100%" height="500"
+            style="border: 2px solid #ccc; border-radius: 8px;">
+    </iframe>
 
-    <div class="col-md-6">
-      <div class="project-card">
-        <h5 class="text-warning"><i class="bi bi-robot me-2"></i>AI & Automation Projects</h5>
-        <p>Architecting <strong>AI Everywhere</strong> (aka NOVA), a modular, semi-offline personal AI assistant inspired by Jarvis—focusing on privacy, local-first logic, and seamless device control.</p>
-      </div>
-    </div>
-
-    <div class="col-12">
-      <div class="project-card">
-        <h5 class="text-warning"><i class="bi bi-lightbulb-fill me-2"></i>Startup Prototyping & Ventures</h5>
-        <p>Founder of early-stage initiatives like <strong>Watchdog Capital</strong> (a hedge fund model) and <strong>TetraMESH</strong>, focused on next-gen networking and defense-grade tech infrastructure.</p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-  <section class="container py-5">
-    <h2 class="section-title">Projects</h2>
-    <div class="row g-4">
-
-      <div class="col-md-4">
-        <div class="project-card text-center">
-          <i class="bi bi-controller mb-3 fs-2 text-warning"></i>
-          <h5>Ascendant</h5>
+    <section class="container py-5">
+        <h2 class="section-title">What I Do</h2>
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="project-card">
+                    <h5 class="text-warning"><i class="bi bi-code-slash me-2"></i>Web & App Development</h5>
+                    <p>Crafting responsive, interactive, and offline-capable web applications with JavaScript, HTML, CSS, and custom backend integrations.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="project-card">
+                    <h5 class="text-warning"><i class="bi bi-palette-fill me-2"></i>UI/UX & Futuristic Design</h5>
+                    <p>Designing sleek, intuitive, and high-tech user interfaces with 3D/2D visual styling, often inspired by sci-fi and minimalist aesthetics.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="project-card">
+                    <h5 class="text-warning"><i class="bi bi-controller me-2"></i>Game Development</h5>
+                    <p>Currently leading <strong>Ascendant</strong>, a story-driven open-world superhero game powered by Godot 4—complete with custom mechanics, lore, and original characters.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="project-card">
+                    <h5 class="text-warning"><i class="bi bi-robot me-2"></i>AI & Automation Projects</h5>
+                    <p>Architecting <strong>AI Everywhere</strong> (aka NOVA), a modular, semi-offline personal AI assistant inspired by Jarvis—focusing on privacy, local-first logic, and seamless device control.</p>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="project-card">
+                    <h5 class="text-warning"><i class="bi bi-lightbulb-fill me-2"></i>Startup Prototyping & Ventures</h5>
+                    <p>Founder of early-stage initiatives like <strong>Watchdog Capital</strong> (a hedge fund model) and <strong>TetraMESH</strong>, focused on next-gen networking and defense-grade tech infrastructure.</p>
+                </div>
+            </div>
         </div>
-      </div>
+    </section>
 
-      <div class="col-md-4">
-        <div class="project-card text-center">
-          <i class="bi bi-cpu-fill mb-3 fs-2 text-warning"></i>
-          <h5>AI Everywhere</h5>
+    <section class="container py-5">
+        <h2 class="section-title">Projects</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="project-card text-center">
+                    <i class="bi bi-controller mb-3 fs-2 text-warning"></i>
+                    <h5>Ascendant</h5>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="project-card text-center">
+                    <i class="bi bi-cpu-fill mb-3 fs-2 text-warning"></i>
+                    <h5>AI Everywhere</h5>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="project-card text-center">
+                    <i class="bi bi-shield-lock-fill mb-3 fs-2 text-warning"></i>
+                    <h5>TetraMESH Defence</h5>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="project-card text-center">
+                    <i class="bi bi-journal-text mb-3 fs-2 text-warning"></i>
+                    <h5>ThinkForge</h5>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="project-card text-center">
+                    <i class="bi bi-bag-check-fill mb-3 fs-2 text-warning"></i>
+                    <h5>Brainrot Supply</h5>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="project-card text-center">
+                    <i class="bi bi-bar-chart-fill mb-3 fs-2 text-warning"></i>
+                    <h5>Watchdog Capital</h5>
+                </div>
+            </div>
         </div>
-      </div>
+    </section>
 
-      <div class="col-md-4">
-        <div class="project-card text-center">
-          <i class="bi bi-shield-lock-fill mb-3 fs-2 text-warning"></i>
-          <h5>TetraMESH Defence</h5>
+    <section class="container py-4">
+        <h2 class="section-title">About Me</h2>
+        <p>I'm Rakshit, a multidisciplinary creator with a passion for building impactful digital experiences, smart systems, and future-first businesses. Whether it's developing intelligent tools, coding immersive games, or designing high-tech UI, I thrive at the intersection of creativity, logic, and innovation. I don’t just build for today—I design with tomorrow in mind.</p>
+    </section>
+
+    <section class="container py-4">
+        <h2 class="section-title">Contact</h2>
+        <p>Email me at <a href="mailto:rakshit.public.facing@gmail.com" class="text-warning">rakshit.public.facing@gmail.com</a></p>
+        <div class="mt-3">
+            <a href="www.linkedin.com/in/rakshitrrao" target="_blank" class="me-3" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="https://github.com/RAKSHITRA0" target="_blank" class="me-3" aria-label="GitHub"><i class="bi bi-github"></i></a>
+            <a href="https://x.com/rakshitrrao" target="_blank" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
         </div>
-      </div>
+    </section>
 
-      <div class="col-md-4">
-        <div class="project-card text-center">
-          <i class="bi bi-journal-text mb-3 fs-2 text-warning"></i>
-          <h5>ThinkForge</h5>
-        </div>
-      </div>
+    <footer class="container py-4">
+        <p>© 2025 Rakshit Rao • All rights reserved.</p>
+    </footer>
 
-      <div class="col-md-4">
-        <div class="project-card text-center">
-          <i class="bi bi-bag-check-fill mb-3 fs-2 text-warning"></i>
-          <h5>Brainrot Supply</h5>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="project-card text-center">
-          <i class="bi bi-bar-chart-fill mb-3 fs-2 text-warning"></i>
-          <h5>Watchdog Capital</h5>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- About -->
-  <section class="container py-4">
-    <h2 class="section-title">About Me</h2>
-    <p>I'm Rakshit, a multidisciplinary creator with a passion for building impactful digital experiences, smart systems, and future-first businesses.
-
-Whether it's developing intelligent tools, coding immersive games, or designing high-tech UI, I thrive at the intersection of creativity, logic, and innovation.
-
-I don’t just build for today—I design with tomorrow in mind.</p>
-  </section>
-
-  <!-- Contact -->
-  <section class="container py-4">
-    <h2 class="section-title">Contact</h2>
-    <p>Email me at <a href="mailto:rakshit.public.facing@gmail.com" class="text-warning">rakshit.public.facing@gmail.com</a></p>
-    <div class="mt-3">
-      <a href="www.linkedin.com/in/rakshitrrao" target="_blank" class="me-3" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-      <a href="https://github.com/RAKSHITRA0" target="_blank" class="me-3" aria-label="GitHub"><i class="bi bi-github"></i></a>
-      <a href="https://x.com/rakshitrrao" target="_blank" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
-    </div>
-  </section>
-
-  <footer class="container py-4">
-    <p>© 2025 Rakshit Rao • All rights reserved.</p>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
