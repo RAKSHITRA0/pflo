@@ -8,6 +8,14 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
 
+    :root {
+      --bg: #0a0a0a;
+      --fg: #e6e6e6;
+      --muted: #b8b8b8;
+      --gold: #c9a24d;
+      --border: #1c1c1c;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -15,16 +23,76 @@
     }
 
     body {
-      background-color: #0a0a0a;
-      color: #e6e6e6;
+      background: var(--bg);
+      color: var(--fg);
       font-family: 'Inter', sans-serif;
       line-height: 1.65;
+      padding-top: 72px;
     }
 
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(10,10,10,0.85);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid var(--border);
+      z-index: 1000;
+    }
+
+    .nav-inner {
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: 18px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo {
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.4px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 26px;
+    }
+
+    .nav-links a {
+      font-size: 0.85rem;
+      color: #9a9a9a;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    /* LAYOUT */
     .container {
       max-width: 1150px;
       margin: 0 auto;
       padding: 90px 40px;
+    }
+
+    section {
+      margin-top: 140px;
+    }
+
+    section h2 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      margin-bottom: 30px;
+    }
+
+    section p {
+      max-width: 780px;
+      font-size: 1.05rem;
+      color: #c5c5c5;
     }
 
     /* HERO */
@@ -42,37 +110,21 @@
     }
 
     .hero h1 span {
-      color: #c9a24d;
+      color: var(--gold);
     }
 
     .hero p {
       margin-top: 22px;
       max-width: 650px;
       font-size: 1.1rem;
-      color: #b8b8b8;
+      color: var(--muted);
     }
 
     .divider {
       width: 140px;
       height: 2px;
-      background: #c9a24d;
+      background: var(--gold);
       margin: 55px 0;
-    }
-
-    section {
-      margin-top: 140px;
-    }
-
-    section h2 {
-      font-size: 2.2rem;
-      font-weight: 600;
-      margin-bottom: 30px;
-    }
-
-    section p {
-      max-width: 780px;
-      color: #c5c5c5;
-      font-size: 1.05rem;
     }
 
     /* GRID */
@@ -84,16 +136,16 @@
     }
 
     .card {
-      border: 1px solid #1f1f1f;
+      border: 1px solid var(--border);
       padding: 35px;
       background: linear-gradient(180deg, #101010, #090909);
     }
 
     .card h3 {
-      color: #c9a24d;
       font-size: 1.1rem;
       margin-bottom: 14px;
       font-weight: 600;
+      color: var(--gold);
     }
 
     .card p {
@@ -105,25 +157,25 @@
     .elite-list {
       margin-top: 35px;
       list-style: none;
-      max-width: 750px;
+      max-width: 760px;
     }
 
     .elite-list li {
       padding: 14px 0;
-      border-bottom: 1px solid #1c1c1c;
+      border-bottom: 1px solid var(--border);
       font-size: 1rem;
       color: #c0c0c0;
     }
 
-    /* SIGNAL BLOCK */
+    /* SIGNAL */
     .signal {
       font-size: 1.2rem;
-      max-width: 800px;
+      max-width: 820px;
       color: #d0d0d0;
     }
 
     .signal span {
-      color: #c9a24d;
+      color: var(--gold);
       font-weight: 600;
     }
 
@@ -131,7 +183,7 @@
     footer {
       margin-top: 160px;
       padding: 45px 0;
-      border-top: 1px solid #1c1c1c;
+      border-top: 1px solid var(--border);
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -144,9 +196,9 @@
     }
 
     footer a {
-      color: #c9a24d;
-      text-decoration: none;
       font-size: 0.9rem;
+      color: var(--gold);
+      text-decoration: none;
     }
 
     footer a:hover {
@@ -156,6 +208,10 @@
     @media (max-width: 600px) {
       .container {
         padding: 65px 24px;
+      }
+
+      .nav-inner {
+        padding: 16px 24px;
       }
 
       footer {
@@ -168,84 +224,97 @@
 </head>
 
 <body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <div class="nav-logo">Rakshit Rao</div>
+      <div class="nav-links">
+        <a href="#mode">Mode</a>
+        <a href="#builds">Builds</a>
+        <a href="#focus">Focus</a>
+        <a href="#principles">Principles</a>
+        <a href="#contact">Access</a>
+      </div>
+    </div>
+  </nav>
+
   <div class="container">
 
     <!-- HERO -->
     <div class="hero">
       <h1>Rakshit <span>Rao</span></h1>
       <p>
-        Founder. Operator. System architect.
-        I build digital and business infrastructure designed for leverage,
-        longevity, and control.
+        Founder, creator, and consultant focused on building systems that scale
+        with clarity, leverage, and long-term intent.
       </p>
 
       <div class="divider"></div>
 
       <p>
-        This is not a portfolio.
-        This is a signal.
+        This page is not a portfolio.  
+        It’s a reference point.
       </p>
     </div>
 
-    <!-- COMMAND -->
-    <section>
-  <h2>Operating Mode</h2>
-  <p>
-    I work as a creator and consultant with a systems-first approach.
-    My focus is on designing clear structures, increasing execution speed,
-    and supporting better decision-making whether that’s for a client,
-    a product, or a growing organization.
-  </p>
-</section>
-
+    <!-- OPERATING MODE -->
+    <section id="mode">
+      <h2>Operating Mode</h2>
+      <p>
+        I work as a creator and consultant with a systems-first approach.
+        My focus is on designing clear structures, increasing execution speed,
+        and enabling better decisions — whether for a client, a product,
+        or an organization in motion.
+      </p>
+    </section>
 
     <!-- BUILDS -->
-    <section>
+    <section id="builds">
       <h2>What I Build</h2>
       <div class="grid">
         <div class="card">
           <h3>Digital Infrastructure</h3>
           <p>
-            High-authority websites, internal dashboards,
-            and automated systems built to scale without chaos.
+            High-authority websites, internal tools, and platforms designed
+            for clarity, durability, and scale.
           </p>
         </div>
         <div class="card">
-          <h3>Business Engines</h3>
+          <h3>Business Systems</h3>
           <p>
-            Service arms, product layers, and holding-company structures
-            designed for compounding advantage.
+            Service layers, internal processes, and multi-entity structures
+            that reduce friction and compound advantage.
           </p>
         </div>
         <div class="card">
-          <h3>Leverage Systems</h3>
+          <h3>Leverage Frameworks</h3>
           <p>
-            Positioning, process, and automation that convert effort
-            into asymmetric returns.
+            Positioning, automation, and workflows that turn focused effort
+            into asymmetric outcomes.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- VENTURES -->
-    <section>
+    <!-- FOCUS -->
+    <section id="focus">
       <h2>Current Focus</h2>
       <ul class="elite-list">
-        <li>Building and scaling digital systems for clients and internal ventures</li>
-        <li>Architecting multi-entity business structures</li>
-        <li>Developing long-term capital and technology plays</li>
-        <li>Sharpening execution velocity and strategic depth</li>
+        <li>Designing and delivering high-quality digital systems</li>
+        <li>Building internal ventures and long-term projects</li>
+        <li>Structuring work for speed, clarity, and reuse</li>
+        <li>Developing capital, technology, and strategic depth</li>
       </ul>
     </section>
 
     <!-- PRINCIPLES -->
-    <section>
+    <section id="principles">
       <h2>Operating Principles</h2>
       <ul class="elite-list">
-        <li>Clarity beats intensity</li>
-        <li>Systems outlast motivation</li>
-        <li>Status is demonstrated, not declared</li>
-        <li>Control the process, the outcome follows</li>
+        <li>Clarity compounds</li>
+        <li>Systems outperform intensity</li>
+        <li>Consistency beats urgency</li>
+        <li>Build once, leverage repeatedly</li>
       </ul>
     </section>
 
@@ -253,9 +322,9 @@
     <section>
       <h2>Signal Over Noise</h2>
       <p class="signal">
-        I don’t optimize for visibility.
+        I don’t optimize for attention.  
         I optimize for <span>inevitability</span>.
-        When the structure is correct, results surface on their own.
+        When the structure is right, results surface naturally.
       </p>
     </section>
 
@@ -264,17 +333,20 @@
       <h2>Trajectory</h2>
       <p>
         This page will evolve as the scope expands.
-        More systems. More entities. More leverage.
-        The direction is fixed.
+        More systems. More responsibility. More leverage.
+        The direction is deliberate.
       </p>
     </section>
 
-    <!-- FOOTER -->
-    <footer>
+    <!-- FOOTER / CONTACT -->
+    <footer id="contact">
       <span>© 2026 Rakshit Rao</span>
-      <a href="#">Selective Contact</a>
+      <a href="mailto:rakshit.private.reachable@gmail.com?subject=Selective%20Access">
+        Selective Access
+      </a>
     </footer>
 
   </div>
+
 </body>
 </html>
