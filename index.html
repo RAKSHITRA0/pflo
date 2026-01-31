@@ -6,14 +6,11 @@
   <title>Rakshit Rao</title>
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
-
     :root {
       --bg: #0a0a0a;
-      --fg: #e6e6e6;
-      --muted: #b8b8b8;
-      --gold: #c9a24d;
-      --border: #1c1c1c;
+      --fg: #f5f5f5;
+      --muted: #9a9a9a;
+      --line: #1f1f1f;
     }
 
     * {
@@ -25,9 +22,14 @@
     body {
       background: var(--bg);
       color: var(--fg);
-      font-family: 'Inter', sans-serif;
-      line-height: 1.65;
+      font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+      line-height: 1.6;
       padding-top: 72px;
+    }
+
+    a {
+      color: var(--fg);
+      text-decoration: none;
     }
 
     /* NAV */
@@ -35,16 +37,16 @@
       position: fixed;
       top: 0;
       width: 100%;
-      background: rgba(10,10,10,0.85);
-      backdrop-filter: blur(6px);
-      border-bottom: 1px solid var(--border);
-      z-index: 1000;
+      background: rgba(10, 10, 10, 0.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+      z-index: 10;
     }
 
     .nav-inner {
-      max-width: 1150px;
+      max-width: 1100px;
       margin: 0 auto;
-      padding: 18px 40px;
+      padding: 18px 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -52,172 +54,131 @@
 
     .nav-logo {
       font-weight: 600;
-      font-size: 0.95rem;
-      letter-spacing: 0.4px;
+      letter-spacing: 0.5px;
     }
 
     .nav-links {
       display: flex;
-      gap: 26px;
+      gap: 22px;
     }
 
     .nav-links a {
       font-size: 0.85rem;
-      color: #9a9a9a;
-      text-decoration: none;
-      transition: color 0.2s ease;
+      color: var(--muted);
     }
 
     .nav-links a:hover {
-      color: var(--gold);
+      color: var(--fg);
     }
 
     /* LAYOUT */
     .container {
-      max-width: 1150px;
+      max-width: 900px;
       margin: 0 auto;
-      padding: 90px 40px;
+      padding: 0 24px;
     }
 
     section {
-      margin-top: 140px;
-    }
-
-    section h2 {
-      font-size: 2.2rem;
-      font-weight: 600;
-      margin-bottom: 30px;
-    }
-
-    section p {
-      max-width: 780px;
-      font-size: 1.05rem;
-      color: #c5c5c5;
+      padding: 80px 0;
+      border-bottom: 1px solid var(--line);
     }
 
     /* HERO */
     .hero {
-      min-height: 95vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      padding-top: 60px;
     }
 
     .hero h1 {
-      font-size: clamp(3.2rem, 6.5vw, 5.8rem);
-      font-weight: 800;
+      font-size: 4.5rem;
+      font-weight: 700;
       letter-spacing: -2px;
-    }
-
-    .hero h1 span {
-      color: var(--gold);
+      line-height: 1.05;
     }
 
     .hero p {
-      margin-top: 22px;
-      max-width: 650px;
-      font-size: 1.1rem;
+      margin-top: 28px;
+      max-width: 620px;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    /* TEXT BLOCKS */
+    h2 {
+      font-size: 1.6rem;
+      margin-bottom: 22px;
+      letter-spacing: -0.5px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 36px;
+    }
+
+    .item h3 {
+      font-size: 1.05rem;
+      margin-bottom: 10px;
+    }
+
+    .item p {
+      font-size: 0.95rem;
       color: var(--muted);
     }
 
-    .divider {
-      width: 140px;
-      height: 2px;
-      background: var(--gold);
-      margin: 55px 0;
-    }
-
-    /* GRID */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 45px;
-      margin-top: 45px;
-    }
-
-    .card {
-      border: 1px solid var(--border);
-      padding: 35px;
-      background: linear-gradient(180deg, #101010, #090909);
-    }
-
-    .card h3 {
-      font-size: 1.1rem;
-      margin-bottom: 14px;
-      font-weight: 600;
-      color: var(--gold);
-    }
-
-    .card p {
-      font-size: 0.95rem;
-      color: #b2b2b2;
-    }
-
-    /* LIST */
-    .elite-list {
-      margin-top: 35px;
+    ul {
       list-style: none;
-      max-width: 760px;
     }
 
-    .elite-list li {
-      padding: 14px 0;
-      border-bottom: 1px solid var(--border);
-      font-size: 1rem;
-      color: #c0c0c0;
+    ul li {
+      margin-bottom: 10px;
+      color: var(--muted);
     }
 
     /* SIGNAL */
     .signal {
-      font-size: 1.2rem;
-      max-width: 820px;
-      color: #d0d0d0;
+      font-size: 1.3rem;
+      font-weight: 500;
+      max-width: 720px;
     }
 
-    .signal span {
-      color: var(--gold);
-      font-weight: 600;
+    /* CTA */
+    .cta a {
+      display: inline-block;
+      margin-top: 24px;
+      font-size: 0.95rem;
+      border-bottom: 1px solid var(--fg);
+      padding-bottom: 4px;
     }
 
     /* FOOTER */
     footer {
-      margin-top: 160px;
-      padding: 45px 0;
-      border-top: 1px solid var(--border);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
+      padding: 60px 0;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--muted);
     }
 
-    footer span {
-      font-size: 0.9rem;
-      color: #777;
-    }
-
-    footer a {
-      font-size: 0.9rem;
-      color: var(--gold);
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
+    /* MOBILE */
     @media (max-width: 600px) {
-      .container {
-        padding: 65px 24px;
+      body {
+        padding-top: 64px;
       }
 
-      .nav-inner {
-        padding: 16px 24px;
+      .hero h1 {
+        font-size: 3rem;
+        letter-spacing: -1px;
       }
 
-      footer {
-        flex-direction: column;
-        gap: 18px;
-        text-align: center;
+      .hero p {
+        font-size: 1rem;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+
+      .nav-links {
+        gap: 16px;
       }
     }
   </style>
@@ -225,81 +186,74 @@
 
 <body>
 
-  <!-- NAV -->
   <nav>
     <div class="nav-inner">
-      <div class="nav-logo">Rakshit Rao</div>
+      <div class="nav-logo">RR</div>
       <div class="nav-links">
         <a href="#mode">Mode</a>
-        <a href="#builds">Builds</a>
+        <a href="#build">Build</a>
         <a href="#focus">Focus</a>
-        <a href="#principles">Principles</a>
-        <a href="#contact">Access</a>
+        <a href="#access">Access</a>
       </div>
     </div>
   </nav>
 
-  <div class="container">
+  <main class="container">
 
     <!-- HERO -->
-    <div class="hero">
-      <h1>Rakshit <span>Rao</span></h1>
+    <section class="hero">
+      <h1>
+        Rakshit<br />
+        <span>Rao</span>
+      </h1>
       <p>
-        Founder, creator, and consultant focused on building systems that scale
-        with clarity, leverage, and long-term intent.
+        I design systems that bring clarity, speed, and durability to complex work.
+        The goal is simple: build structures that keep working long after the initial effort ends.
       </p>
-
-      <div class="divider"></div>
-
-      <p>
-        This page is not a portfolio.  
-        It’s a reference point.
-      </p>
-    </div>
+    </section>
 
     <!-- OPERATING MODE -->
     <section id="mode">
       <h2>Operating Mode</h2>
       <p>
-        I work as a creator and consultant with a systems-first approach.
-        My focus is on designing clear structures, increasing execution speed,
-        and enabling better decisions — whether for a client, a product,
-        or an organization in motion.
+        I work as a creator and consultant with a systems-first mindset.
+        My role is to design structure before scale, reduce friction before growth,
+        and enable better decisions across products, teams, and organizations in motion.
       </p>
     </section>
 
-    <!-- BUILDS -->
-    <section id="builds">
+    <!-- WHAT I BUILD -->
+    <section id="build">
       <h2>What I Build</h2>
       <div class="grid">
-        <div class="card">
+        <div class="item">
           <h3>Digital Infrastructure</h3>
           <p>
-            High-authority websites, internal tools, and platforms designed
-            for clarity, durability, and scale.
+            High-authority websites, internal tools, and platforms built for clarity,
+            longevity, and controlled expansion.
           </p>
         </div>
-        <div class="card">
+        <div class="item">
           <h3>Business Systems</h3>
           <p>
-            Service layers, internal processes, and multi-entity structures
-            that reduce friction and compound advantage.
+            Service layers, internal workflows, and multi-entity structures
+            designed to remove drag and compound advantage.
           </p>
         </div>
-        <div class="card">
+        <div class="item">
           <h3>Leverage Frameworks</h3>
           <p>
-            Positioning, automation, and workflows that turn focused effort
+            Positioning, automation, and repeatable workflows that turn focused effort
             into asymmetric outcomes.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- FOCUS -->
+    <!-- CURRENT FOCUS -->
     <section id="focus">
       <h2>Current Focus</h2>
-      <ul class="elite-list">
+      <ul>
         <li>Designing and delivering high-quality digital systems</li>
         <li>Building internal ventures and long-term projects</li>
         <li>Structuring work for speed, clarity, and reuse</li>
@@ -308,9 +262,9 @@
     </section>
 
     <!-- PRINCIPLES -->
-    <section id="principles">
+    <section>
       <h2>Operating Principles</h2>
-      <ul class="elite-list">
+      <ul>
         <li>Clarity compounds</li>
         <li>Systems outperform intensity</li>
         <li>Consistency beats urgency</li>
@@ -322,9 +276,9 @@
     <section>
       <h2>Signal Over Noise</h2>
       <p class="signal">
-        I don’t optimize for attention.  
-        I optimize for <span>inevitability</span>.
-        When the structure is right, results surface naturally.
+        I don’t optimize for attention.
+        I optimize for inevitability.
+        When the structure is right, outcomes surface on their own.
       </p>
     </section>
 
@@ -338,15 +292,20 @@
       </p>
     </section>
 
-    <!-- FOOTER / CONTACT -->
-    <footer id="contact">
-      <span>© 2026 Rakshit Rao</span>
-      <a href="mailto:rakshit.private.reachable@gmail.com?subject=Selective%20Access">
-        Selective Access
-      </a>
-    </footer>
+    <!-- ACCESS -->
+    <section id="access" class="cta">
+      <h2>Selective Access</h2>
+      <p>
+        Collaboration is limited and intentional.
+      </p>
+      <a href="mailto:contact@rakshitrao.xyz">Request access</a>
+    </section>
 
-  </div>
+  </main>
+
+  <footer>
+    © Rakshit Rao — Structure before scale
+  </footer>
 
 </body>
 </html>
